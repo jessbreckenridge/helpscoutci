@@ -1,0 +1,2 @@
+# helpscoutci
+Help Scout CI
