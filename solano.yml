@@ -1,3 +1,2 @@
-test_pattern: 'tests/*.sh'
-#tests:
-#  - echo "shell command to run tests"
+tests:
+ - /bin/bash tests/mocktest.sh
