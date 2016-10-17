@@ -1,3 +1,3 @@
-#Boo.
+#Boo2.
 tests:
  - /bin/bash tests/mocktest.sh
