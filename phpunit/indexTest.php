@@ -8,7 +8,7 @@ class indexTest extends PHPUnit_Framework_TestCase
 		include('www/index.php');
 		$output = ob_get_clean();
 		ob_end_clean();
-		$this->equals("Automation for the people", $output);
+		$this->assertEquals("Automation for the people");
 		}
 	}
 
