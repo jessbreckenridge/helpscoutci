@@ -24,6 +24,7 @@ $tagline = $a->gettagline()
 $tagline = "Automation for the people"
 
 print($tagline)
+
 ?>
 
 
