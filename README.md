@@ -54,7 +54,9 @@ Simply commit code into the repository on the staging branch. It will provision 
 	- No log aggregation (splunk, ELKstack, etc.)
 	- No proper health check in the code.
 	- No canary deploys (LinkerD, or ELB w/ weighted route 53 A records). Non functional, or non-optimal hosts could easily make it to production.
-	
+	- Production test scalability, integration and holistic testing issues are to numerous to mention for a large scale microservices infrastructure.
+- My week point is still networking. Went down a rabbit hole on networking for about 6 hours. This is why I use Terraform for AWS configuration.
+
 
 
 
