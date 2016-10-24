@@ -24,13 +24,16 @@ Amazon did not have a suitable CI service. I evaluated the following services:
 
 - Codeship: Previous experience ruled this out, due to lack of capabilities.
 - Circle CI: See above.
-- Solano CI: Reccomended, but not used. Decided to give it a try.
+- Solano CI: Reccomended, but I had not previously used.
 
 Solano CI seemed to have solid documentation, capabilities for multiple languages, supported upto 4 workers on it's 14 day trial. Due to this I chose to test it out.
 
-I scaffolded the existing PHP demo for elastic beanstalk. I used a variable in the code to display the message "Automation for the People". This was due to difficulting finding a unit test frameworks for HTML.
 
-The load balancer was configured to check for a 200 status before switching instances into the load balancer.
+I them performed the following actions: 
+
+- I created a simple test page with the words "Automation for the people"
+- I instantiated a boilerplate Beanstalk configuration with a cloudformation template. I have saved this template in the cloudformation directory.
+- ELB was configured to check for a 200 status before swapping the new instances into the load balancer.
 
 ## Workflow
 
@@ -40,7 +43,7 @@ Github commit (staging branch) -> Solano CI -> Elastic Beanstalk
 
 ## Instructions:
 
-Simply commit code into the repository on the staging branch. It will provision new instances, test them, and deploy them into the environment. Upon passing health checks, put these new instances into the load balancer, and remove the old ones.
+Simply commit code into the repository on the staging branch. It will provision new instances, test them, and deploy them into the environment. Upon passing health checks, put these new instances into the load balancer, and remove the old ones. If you change the index.html text, it will fail upon deployment, and nothing will happen to the previous immutable instances.
 
 
 # Github repo: https://github.com/jessicabreck/helpscoutci.git
@@ -55,7 +58,7 @@ Simply commit code into the repository on the staging branch. It will provision 
 	- No proper health check in the code.
 	- No canary deploys (LinkerD, or ELB w/ weighted route 53 A records). Non functional, or non-optimal hosts could easily make it to production.
 	- Production test scalability, integration and holistic testing issues are to numerous to mention for a large scale microservices infrastructure.
-- My week point is still networking. Went down a rabbit hole on networking for about 6 hours. This is why I use Terraform for AWS configuration.
+    - Complete end to end code configuration needed: Terraform for AWS environment, ancillary script/boto for fine configuration. If you cannot hit a button and recreate it in an hour, it is not production ready.
 
 
 
