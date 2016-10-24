@@ -18,7 +18,7 @@ The first thing I did was investigate what AWS services were available to utiliz
 
 - Codepipeline: Monitors github repositories, and configures pipelines for build, and deploy.
 - CodeDeploy: Deploys applications to a fleet of instances. It however, does not support immutable instances.
-- Elastic Beanstalk. Useful for deploying new immutable intances in a red/back manner.
+- Elastic Beanstalk. Useful for deploying new immutable intances in a red/black manner.
 
 Amazon did not have a suitable CI service. I evaluated the following services:
 
@@ -26,7 +26,7 @@ Amazon did not have a suitable CI service. I evaluated the following services:
 - Circle CI: See above.
 - Solano CI: Reccomended, but I had not previously used.
 
-Solano CI seemed to have solid documentation, capabilities for multiple languages, supported upto 4 workers on it's 14 day trial. Due to this I chose to test it out.
+Solano CI seemed to have solid documentation, capabilities for multiple languages, and support for  4 workers during it's 14 day trial. Due to this I chose to test it out.
 
 
 I them performed the following actions: 
