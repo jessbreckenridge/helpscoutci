@@ -46,7 +46,11 @@ Github commit (staging branch) -> Solano CI -> Elastic Beanstalk
 Simply commit code into the repository on the staging branch. It will provision new instances, test them, and deploy them into the environment. Upon passing health checks, put these new instances into the load balancer, and remove the old ones. If you change the index.html text, it will fail upon deployment, and nothing will happen to the previous immutable instances.
 
 
+Additional workflows from staging --> Production branch could be added, but are pointless with canary nodes + application monitoring.
+
 # Github repo: https://github.com/jessicabreck/helpscoutci.git
+
+
 
 
 ## Lessons learned:
